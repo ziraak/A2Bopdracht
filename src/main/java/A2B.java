@@ -14,7 +14,7 @@ public class A2B {
     public static void main(String[] args) {
         A2B main = new A2B();
 
-        main.getRouteInfo("Nijmegen", "Arnhem");
+        main.getRouteInfo("Arnhem", "Nijmegen");
     }
 
     public void getRouteInfo(String beginpunt, String eindpunt){

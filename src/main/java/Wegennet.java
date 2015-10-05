@@ -77,6 +77,8 @@ public class Wegennet implements StatischeGegevens {
         VerbindingsStuk neun = new VerbindingsStuk(foxtrot, Nijmegen, 10, "neun");
         wegen.add(neun);
 
+        //TODO omdraaien wegen
+
     }
 
 

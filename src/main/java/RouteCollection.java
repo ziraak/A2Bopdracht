@@ -43,14 +43,14 @@ public class RouteCollection {
     }
 
     public ArrayList<Route> getRoutes(String beginpunt, String eindpunt) {
-//        ArrayList<Route> newList = new ArrayList<Route>(4);
-//        for (Route r : routes) {
-//            if (r.beginpunt == beginpunt && r.eindpunt == eindpunt) {
-//                newList.add(r);
-//            }
-//        }
-//        return newList;
-        return routes;
+        ArrayList<Route> newList = new ArrayList<Route>(4);
+        for (Route r : routes) {
+            if (r.beginpunt == beginpunt && r.eindpunt == eindpunt) {
+                newList.add(r);
+            }
+        }
+        return newList;
+
     }
 
 }
