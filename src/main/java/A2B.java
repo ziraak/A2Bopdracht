@@ -3,5 +3,5 @@
  * Remember that Harmen is awesome
  */
 public class A2B {
-    
+
 }
