@@ -6,10 +6,18 @@ import java.util.ArrayList;
  */
 public class A2B {
 
+    public String beginPunt, eindPunt;
+
+
     public void getRouteInfo(String beginpunt, String eindpunt){
 
     }
      private ArrayList checkDuplicateVerkeersinfo(ArrayList verkeersinfo){
          return null;
      }
+
+    public static void main(String[] args) {
+
+    }
+
 }
