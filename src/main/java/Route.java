@@ -4,10 +4,11 @@ import java.util.ArrayList;
  * Created by J on 5-10-2015.
  */
 public class Route {
-    VerbindingsStuk[] verbindingsStukArrayList;
+    ArrayList<VerbindingsStuk> verbindingsStukArrayList;
     String beginpunt, eindpunt;
+    private int totaleReistijd;
 
-    public Route(String beginpunt, String eindpunt, VerbindingsStuk[] verbindingsStukArrayList) {
+    public Route(String beginpunt, String eindpunt, ArrayList<VerbindingsStuk> verbindingsStukArrayList) {
         this.eindpunt = eindpunt;
         this.verbindingsStukArrayList = verbindingsStukArrayList;
         this.beginpunt = beginpunt;
@@ -15,5 +16,21 @@ public class Route {
 
     public ArrayList<VerkeersInfo> getVerkeersInfo() {
         return null;
+    }
+
+    public void printInfo() {
+        System.out.println("route info:-------------------------------------------");
+        System.out.println("beginpunt = " + beginpunt);
+        System.out.println("eindpunt = " + eindpunt);
+        getTotaleReistijd();
+        System.out.println("totaleReistijd = " + totaleReistijd + " minuten");
+
+    }
+
+    private void getTotaleReistijd() {
+        totaleReistijd = 0;
+        for (VerbindingsStuk k : verbindingsStukArrayList) {
+            totaleReistijd += k.getReistijd();
+        }
     }
 }

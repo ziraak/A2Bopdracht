@@ -9,38 +9,48 @@ public class RouteCollection {
     private Wegennet wegennet;
 
     public RouteCollection(Wegennet wegennet) {
-        wegennet = wegennet;
-        init();
+        routes = new ArrayList<Route>(5);
+        init(wegennet);
     }
 
 
-    private void init() {
-        Route one = new Route("Arnhem", "Nijmegen",
-                new VerbindingsStuk[]{wegennet.getInstanceOfVerbindingsStuk("eins"),
-                        wegennet.getInstanceOfVerbindingsStuk("zwei"),
-                        wegennet.getInstanceOfVerbindingsStuk("drei"),
-                        wegennet.getInstanceOfVerbindingsStuk("vier")});
-        Route two = new Route("Arnhem", "Nijmegen",
-                new VerbindingsStuk[]{wegennet.getInstanceOfVerbindingsStuk("eins"),
-                        wegennet.getInstanceOfVerbindingsStuk("funf"),
-                        wegennet.getInstanceOfVerbindingsStuk("sechs"),
-                        wegennet.getInstanceOfVerbindingsStuk("sieben")});
-        Route three = new Route("Arnhem", "Nijmegen",
-                new VerbindingsStuk[]{wegennet.getInstanceOfVerbindingsStuk("acht"),
-                        wegennet.getInstanceOfVerbindingsStuk("neun")});
+    private void init(Wegennet wn) {
+        ArrayList<VerbindingsStuk> lijst = new ArrayList<VerbindingsStuk>(5);
+        lijst.add(wn.getInstanceOfVerbindingsStuk("eins"));
+        lijst.add(wn.getInstanceOfVerbindingsStuk("zwei"));
+        lijst.add(wn.getInstanceOfVerbindingsStuk("drei"));
+        lijst.add(wn.getInstanceOfVerbindingsStuk("vier"));
+        Route one = new Route("Arnhem", "Nijmegen", lijst);
+
+
+        lijst = new ArrayList<VerbindingsStuk>(5);
+        lijst.add(wn.getInstanceOfVerbindingsStuk("eins"));
+        lijst.add(wn.getInstanceOfVerbindingsStuk("funf"));
+        lijst.add(wn.getInstanceOfVerbindingsStuk("sechs"));
+        lijst.add(wn.getInstanceOfVerbindingsStuk("sieben"));
+        Route two = new Route("Arnhem", "Nijmegen", lijst);
+
+
+        lijst = new ArrayList<VerbindingsStuk>(3);
+        lijst.add(wn.getInstanceOfVerbindingsStuk("neun"));
+        lijst.add(wn.getInstanceOfVerbindingsStuk("acht"));
+        Route three = new Route("Arnhem", "Nijmegen", lijst);
+
+
         routes.add(one);
         routes.add(two);
         routes.add(three);
     }
 
     public ArrayList<Route> getRoutes(String beginpunt, String eindpunt) {
-        ArrayList<Route> newList = new ArrayList<Route>(4);
-        for (Route r : routes) {
-            if (r.beginpunt == beginpunt && r.eindpunt == eindpunt) {
-                newList.add(r);
-            }
-        }
-        return newList;
+//        ArrayList<Route> newList = new ArrayList<Route>(4);
+//        for (Route r : routes) {
+//            if (r.beginpunt == beginpunt && r.eindpunt == eindpunt) {
+//                newList.add(r);
+//            }
+//        }
+//        return newList;
+        return routes;
     }
 
 }

@@ -8,12 +8,14 @@ public class VerbindingsStuk {
     private Locatie startPunt, eindPunt;
     private String naam;
     private int reistijd;
+    private ArrayList<Belemmering> belemmeringen;
 
     public VerbindingsStuk(Locatie startPunt, Locatie eindPunt, int reistijdInMinuten, String naam) {
         this.startPunt = startPunt;
         this.eindPunt = eindPunt;
         this.naam = naam;
         this.reistijd = reistijdInMinuten;
+        belemmeringen = new ArrayList<Belemmering>();
     }
 
     public String getNaam() {
@@ -33,4 +35,11 @@ public class VerbindingsStuk {
     }
 
 
+    public int getReistijd() {
+        int werkelijkeReistijd = reistijd;
+        for (Belemmering b : belemmeringen) {
+            werkelijkeReistijd += b.vertraging;
+        }
+        return werkelijkeReistijd;
+    }
 }

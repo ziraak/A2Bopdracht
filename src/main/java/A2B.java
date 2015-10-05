@@ -20,10 +20,16 @@ public class A2B {
     public void getRouteInfo(String beginpunt, String eindpunt){
         ArrayList<Route> routeList;
         RouteCollection routeCollection = new RouteCollection(wegennet);
+
         Locatie begin = wegennet.getInstanceOfLocatie(beginpunt);
         Locatie eind = wegennet.getInstanceOfLocatie(eindpunt);
 
+
         routeList = routeCollection.getRoutes(beginpunt, eindpunt);
+
+        for (Route r : routeList) {
+            r.printInfo();
+        }
 
 
     }
