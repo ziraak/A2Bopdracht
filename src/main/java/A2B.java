@@ -19,11 +19,12 @@ public class A2B {
 
     public void getRouteInfo(String beginpunt, String eindpunt){
         ArrayList<Route> routeList;
-        RouteCollection routeCollection = new RouteCollection();
+        RouteCollection routeCollection = new RouteCollection(wegennet);
         Locatie begin = wegennet.getInstanceOfLocatie(beginpunt);
         Locatie eind = wegennet.getInstanceOfLocatie(eindpunt);
 
-//        routeCollection.getRoutes(beginpunt,eindpunt);
+        routeList = routeCollection.getRoutes(beginpunt, eindpunt);
+
 
     }
      private ArrayList checkDuplicateVerkeersinfo(ArrayList verkeersinfo){

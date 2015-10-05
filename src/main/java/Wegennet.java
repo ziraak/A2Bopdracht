@@ -13,6 +13,12 @@ public class Wegennet implements StatischeGegevens {
 
 
     public VerbindingsStuk getInstanceOfVerbindingsStuk(String verbindingsStuk) {
+        for (VerbindingsStuk x : wegen) {
+            if (x.getNaam() == verbindingsStuk) {
+                System.out.println("weg gevonden : " + verbindingsStuk);
+                return x;
+            }
+        }
         return null;
     }
 

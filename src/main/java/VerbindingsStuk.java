@@ -16,6 +16,9 @@ public class VerbindingsStuk {
         this.reistijd = reistijdInMinuten;
     }
 
+    public String getNaam() {
+        return this.naam;
+    }
 
     public ArrayList<VerbindingsStuk> getAanliggendeStukken() {
         return null;
