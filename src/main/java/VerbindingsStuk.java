@@ -31,6 +31,9 @@ public class VerbindingsStuk {
     }
 
     public void addVerkeersinfo(VerkeersInfo informatie) {
+        if (informatie instanceof Belemmering) {
+            belemmeringen.add((Belemmering) informatie);
+        }
 
     }
 
@@ -38,7 +41,8 @@ public class VerbindingsStuk {
     public int getReistijd() {
         int werkelijkeReistijd = reistijd;
         for (Belemmering b : belemmeringen) {
-            werkelijkeReistijd += b.vertraging;
+            werkelijkeReistijd += b.getVertraging();
+//            System.out.println("vertraging = " + b.vertraging);
         }
         return werkelijkeReistijd;
     }

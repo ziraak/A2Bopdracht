@@ -15,7 +15,6 @@ public class Wegennet implements StatischeGegevens {
     public VerbindingsStuk getInstanceOfVerbindingsStuk(String verbindingsStuk) {
         for (VerbindingsStuk x : wegen) {
             if (x.getNaam() == verbindingsStuk) {
-                System.out.println("weg gevonden : " + verbindingsStuk);
                 return x;
             }
         }
@@ -25,7 +24,6 @@ public class Wegennet implements StatischeGegevens {
     public Locatie getInstanceOfLocatie(String locatie) {
         for (Locatie x : plaatsen) {
             if (x.getNaam() == locatie) {
-                System.out.println("plaats gevonden : " + locatie);
                 return x;
             }
         }
@@ -54,6 +52,9 @@ public class Wegennet implements StatischeGegevens {
         plaatsen.add(foxtrot);
 
         VerbindingsStuk eins = new VerbindingsStuk(Arnhem, alfa, 2, "eins");
+        Belemmering belemmering = new Wegwerkzaamheden();
+        belemmering.vertraging = 10;
+        eins.addVerkeersinfo(belemmering);
         wegen.add(eins);
         VerbindingsStuk zwei = new VerbindingsStuk(alfa, bravo, 5, "zwei");
         wegen.add(zwei);
@@ -64,6 +65,10 @@ public class Wegennet implements StatischeGegevens {
         VerbindingsStuk funf = new VerbindingsStuk(alfa, delta, 4, "funf");
         wegen.add(funf);
         VerbindingsStuk sechs = new VerbindingsStuk(delta, echo, 3, "sechs");
+
+        belemmering = new File();
+        belemmering.vertraging = 13;
+        sechs.addVerkeersinfo(belemmering);
         wegen.add(sechs);
         VerbindingsStuk sieben = new VerbindingsStuk(echo, Nijmegen, 6, "sieben");
         wegen.add(sieben);
