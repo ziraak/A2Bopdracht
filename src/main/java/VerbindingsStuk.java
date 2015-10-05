@@ -7,11 +7,13 @@ public class VerbindingsStuk {
 
     private Locatie startPunt, eindPunt;
     private String naam;
+    private int reistijd;
 
-    public VerbindingsStuk(Locatie startPunt, Locatie eindPunt, String naam) {
+    public VerbindingsStuk(Locatie startPunt, Locatie eindPunt, int reistijdInMinuten, String naam) {
         this.startPunt = startPunt;
         this.eindPunt = eindPunt;
         this.naam = naam;
+        this.reistijd = reistijdInMinuten;
     }
 
 

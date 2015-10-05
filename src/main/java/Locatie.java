@@ -15,8 +15,8 @@ public class Locatie {
     }
 
 
-    public String getNaam(Locatie L) {
-        return L.naam;
+    public String getNaam() {
+        return this.naam;
     }
 
     public ArrayList<VerbindingsStuk> getVerbindingsStukkenToLocation() {
