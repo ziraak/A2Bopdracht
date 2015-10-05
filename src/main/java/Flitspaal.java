@@ -1,5 +1,5 @@
 /**
  * Created by J on 5-10-2015.
  */
-public class Flitspaal {
+public class Flitspaal extends SnelheidsControle implements StatischeGegevens {
 }

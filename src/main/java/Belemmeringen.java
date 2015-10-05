@@ -1,5 +1,5 @@
 /**
  * Created by J on 5-10-2015.
  */
-public class Belemmeringen {
+public class Belemmeringen implements DynamischeGegevens {
 }
