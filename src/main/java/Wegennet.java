@@ -5,13 +5,21 @@ import java.util.ArrayList;
  * Created by J on 5-10-2015.
  */
 public class Wegennet implements StatischeGegevens {
+    private static Wegennet wn = null;
     private ArrayList<VerbindingsStuk> wegen;
     private ArrayList<Locatie> plaatsen;
 
-    public Wegennet() {
+    private Wegennet() {
         init();
     }
 
+    public static Wegennet getInstance() {
+        if (wn == null) {
+            return wn = new Wegennet();
+        } else {
+            return wn;
+        }
+    }
 
     public VerbindingsStuk getInstanceOfVerbindingsStuk(String verbindingsStuk) {
         for (VerbindingsStuk x : wegen) {

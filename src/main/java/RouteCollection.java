@@ -8,13 +8,14 @@ public class RouteCollection {
     private ArrayList<Route> routes;
     private Wegennet wegennet;
 
-    public RouteCollection(Wegennet wegennet) {
+    public RouteCollection() {
         routes = new ArrayList<Route>(5);
-        init(wegennet);
+        init();
     }
 
 
-    private void init(Wegennet wn) {
+    private void init() {
+        Wegennet wn = Wegennet.getInstance();
         ArrayList<VerbindingsStuk> lijst = new ArrayList<VerbindingsStuk>(5);
         lijst.add(wn.getInstanceOfVerbindingsStuk("eins"));
         lijst.add(wn.getInstanceOfVerbindingsStuk("zwei"));

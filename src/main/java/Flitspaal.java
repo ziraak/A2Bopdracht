@@ -5,9 +5,6 @@ import java.util.ArrayList;
  */
 public class Flitspaal extends SnelheidsControle implements StatischeGegevens {
 
-    private VerbindingsStuk verbinding;
-    private ArrayList<String> locs = new ArrayList<String>();
-    private String start, eind;
     public Flitspaal(VerbindingsStuk vs) {
         this.verbinding = vs;
     }
@@ -15,7 +12,7 @@ public class Flitspaal extends SnelheidsControle implements StatischeGegevens {
 
     @Override
     public int getMaxSnelheid() {
-        Wegennet wn = new Wegennet();
+        Wegennet wn = Wegennet.getInstance();
         locs = wn.getAanliggendeLocaties(verbinding);
         start = locs.get(0);
         eind = locs.get(1);

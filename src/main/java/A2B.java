@@ -9,7 +9,7 @@ public class A2B {
     public Wegennet wegennet;
 
     public A2B() {
-        this.wegennet = new Wegennet();
+        this.wegennet = Wegennet.getInstance();
     }
 
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class A2B {
 
     public void getRouteInfo(String beginpunt, String eindpunt){
         ArrayList<Route> routeList;
-        RouteCollection routeCollection = new RouteCollection(wegennet);
+        RouteCollection routeCollection = new RouteCollection();
 
         Locatie begin = wegennet.getInstanceOfLocatie(beginpunt);
         Locatie eind = wegennet.getInstanceOfLocatie(eindpunt);

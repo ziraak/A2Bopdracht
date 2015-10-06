@@ -8,4 +8,5 @@ public class SnelheidsControle extends VerkeersInfo {
         return maxSpeed;
     }
 
+
 }
