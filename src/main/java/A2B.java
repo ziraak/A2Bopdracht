@@ -3,6 +3,7 @@ import java.util.ArrayList;
 /**
  * Created by Harmen on 5-10-2015.
  * Remember that Harmen is awesome
+ * nah
  */
 public class A2B {
     public Wegennet wegennet;
@@ -15,6 +16,8 @@ public class A2B {
         A2B main = new A2B();
 
         main.getRouteInfo("Arnhem", "Nijmegen");
+        System.out.println("----------------END OF LINE----------------");
+        main.getRouteInfo("Nijmegen", "Arnhem");
     }
 
     public void getRouteInfo(String beginpunt, String eindpunt){

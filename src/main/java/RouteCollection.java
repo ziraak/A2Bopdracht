@@ -36,10 +36,32 @@ public class RouteCollection {
         lijst.add(wn.getInstanceOfVerbindingsStuk("acht"));
         Route three = new Route("Arnhem", "Nijmegen", lijst);
 
+        ArrayList<VerbindingsStuk> lijstBack = new ArrayList<VerbindingsStuk>(5);
+        lijstBack.add(wn.getInstanceOfVerbindingsStuk("one"));
+        lijstBack.add(wn.getInstanceOfVerbindingsStuk("two"));
+        lijstBack.add(wn.getInstanceOfVerbindingsStuk("three"));
+        lijstBack.add(wn.getInstanceOfVerbindingsStuk("four"));
+        Route oneReverse = new Route("Nijmegen", "Arnhem", lijstBack);
+
+        lijstBack = new ArrayList<VerbindingsStuk>(5);
+        lijstBack.add(wn.getInstanceOfVerbindingsStuk("one"));
+        lijstBack.add(wn.getInstanceOfVerbindingsStuk("five"));
+        lijstBack.add(wn.getInstanceOfVerbindingsStuk("six"));
+        lijstBack.add(wn.getInstanceOfVerbindingsStuk("seven"));
+        Route twoReverse = new Route("Nijmegen", "Arnhem", lijstBack);
+
+        lijstBack = new ArrayList<VerbindingsStuk>(3);
+        lijstBack.add(wn.getInstanceOfVerbindingsStuk("nine"));
+        lijstBack.add(wn.getInstanceOfVerbindingsStuk("eight"));
+        Route threeReverse = new Route("Nijmegen", "Arnhem", lijstBack);
+
 
         routes.add(one);
         routes.add(two);
         routes.add(three);
+        routes.add(oneReverse);
+        routes.add(twoReverse);
+        routes.add(threeReverse);
     }
 
     public ArrayList<Route> getRoutes(String beginpunt, String eindpunt) {

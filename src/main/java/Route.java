@@ -7,6 +7,7 @@ public class Route {
     ArrayList<VerbindingsStuk> verbindingsStukArrayList;
     String beginpunt, eindpunt;
     private int totaleReistijd;
+    private int maxspeed;
 
     public Route(String beginpunt, String eindpunt, ArrayList<VerbindingsStuk> verbindingsStukArrayList) {
         this.eindpunt = eindpunt;
@@ -31,6 +32,7 @@ public class Route {
         totaleReistijd = 0;
         for (VerbindingsStuk k : verbindingsStukArrayList) {
             totaleReistijd += k.getReistijd();
+            maxspeed = k.getSnelheidsLimiet();
         }
     }
 }

@@ -8,7 +8,9 @@ public class VerbindingsStuk {
     private Locatie startPunt, eindPunt;
     private String naam;
     private int reistijd;
+    private int maxspeed;
     private ArrayList<Belemmering> belemmeringen;
+    private ArrayList<SnelheidsControle> snelheidscontroles;
 
     public VerbindingsStuk(Locatie startPunt, Locatie eindPunt, int reistijdInMinuten, String naam) {
         this.startPunt = startPunt;
@@ -16,6 +18,7 @@ public class VerbindingsStuk {
         this.naam = naam;
         this.reistijd = reistijdInMinuten;
         belemmeringen = new ArrayList<Belemmering>();
+        snelheidscontroles = new ArrayList<SnelheidsControle>();
     }
 
     public String getNaam() {
@@ -33,8 +36,17 @@ public class VerbindingsStuk {
     public void addVerkeersinfo(VerkeersInfo informatie) {
         if (informatie instanceof Belemmering) {
             belemmeringen.add((Belemmering) informatie);
+        } else if (informatie instanceof SnelheidsControle) {
+            snelheidscontroles.add((SnelheidsControle) informatie);
         }
 
+    }
+
+    public int getSnelheidsLimiet() {
+        for (SnelheidsControle s : snelheidscontroles) {
+            maxspeed = s.getMaxSnelheid();
+        }
+        return maxspeed;
     }
 
 
