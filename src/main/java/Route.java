@@ -21,8 +21,12 @@ public class Route {
 
     public void printInfo() {
         System.out.println("route info:-------------------------------------------");
-        System.out.println("beginpunt = " + beginpunt);
-        System.out.println("eindpunt = " + eindpunt);
+        System.out.println("van " + beginpunt + " naar " + eindpunt);
+        System.out.printf("via ");
+        for (VerbindingsStuk verbindingsStuk : verbindingsStukArrayList) {
+            System.out.printf("%s,", verbindingsStuk.getNaam());
+        }
+        System.out.printf("%n");
         getTotaleReistijd();
         System.out.println("totaleReistijd = " + totaleReistijd + " minuten");
 
@@ -32,7 +36,7 @@ public class Route {
         totaleReistijd = 0;
         for (VerbindingsStuk k : verbindingsStukArrayList) {
             totaleReistijd += k.getReistijd();
-            maxspeed = k.getSnelheidsLimiet();
+            k.getSnelheidsControle();
         }
     }
 }

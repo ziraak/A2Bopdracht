@@ -6,7 +6,9 @@ import java.util.ArrayList;
 public abstract class VerkeersInfo {
 
     protected VerbindingsStuk verbinding;
-    protected ArrayList<String> locs = new ArrayList<String>();
     protected String start, eind;
-    int id;
+
+    public void addTo(VerbindingsStuk verbinding) {
+        this.verbinding = verbinding;
+    }
 }

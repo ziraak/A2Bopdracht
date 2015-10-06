@@ -51,61 +51,60 @@ public class Wegennet implements StatischeGegevens {
     public void init() {
         wegen = new ArrayList<VerbindingsStuk>(20);
         plaatsen = new ArrayList<Locatie>(10);
-        Locatie Arnhem = new Locatie(51.9833333, 5.9166667, "Arnhem");
+        Locatie Arnhem = new Plaats(51.9833333, 5.9166667, "Arnhem");
         plaatsen.add(Arnhem);
-        Locatie Nijmegen = new Locatie(51.8428670, 5.8546220, "Nijmegen");
+        Locatie Nijmegen = new Plaats(51.8428670, 5.8546220, "Nijmegen");
         plaatsen.add(Nijmegen);
-        Locatie alfa = new Locatie(51.8428670, 5.854622, "alfa");
+        Locatie alfa = new Knooppunt(51.8428670, 5.854622, "alfa");
         plaatsen.add(alfa);
-        Locatie bravo = new Locatie(51.8428670, 5.854622, "bravo");
+        Locatie bravo = new Knooppunt(51.8428670, 5.854622, "bravo");
         plaatsen.add(bravo);
-        Locatie charlie = new Locatie(51.8428670, 5.854622, "charlie");
+        Locatie charlie = new Knooppunt(51.8428670, 5.854622, "charlie");
         plaatsen.add(charlie);
-        Locatie delta = new Locatie(51.8428670, 5.854622, "delta");
+        Locatie delta = new Knooppunt(51.8428670, 5.854622, "delta");
         plaatsen.add(delta);
-        Locatie echo = new Locatie(51.8428670, 5.854622, "echo");
+        Locatie echo = new Knooppunt(51.8428670, 5.854622, "echo");
         plaatsen.add(echo);
-        Locatie foxtrot = new Locatie(51.8428670, 5.854622, "foxtrot");
+        Locatie foxtrot = new Knooppunt(51.8428670, 5.854622, "foxtrot");
         plaatsen.add(foxtrot);
 
-        VerbindingsStuk eins = new VerbindingsStuk(Arnhem, alfa, 2, "eins");
+        VerbindingsStuk eins = new VerbindingsStuk(Arnhem, alfa, 2, 60, "eins");
         wegen.add(eins);
-        VerbindingsStuk zwei = new VerbindingsStuk(alfa, bravo, 5, "zwei");
+        VerbindingsStuk zwei = new VerbindingsStuk(alfa, bravo, 5, 100, "zwei");
         wegen.add(zwei);
-        VerbindingsStuk drei = new VerbindingsStuk(bravo, charlie, 3, "drei");
+        VerbindingsStuk drei = new VerbindingsStuk(bravo, charlie, 3, 100, "drei");
         wegen.add(drei);
-        VerbindingsStuk vier = new VerbindingsStuk(charlie, Nijmegen, 4, "vier");
+        VerbindingsStuk vier = new VerbindingsStuk(charlie, Nijmegen, 4, 50, "vier");
         wegen.add(vier);
-        VerbindingsStuk funf = new VerbindingsStuk(alfa, delta, 4, "funf");
+        VerbindingsStuk funf = new VerbindingsStuk(alfa, delta, 4, 100, "funf");
         wegen.add(funf);
-        VerbindingsStuk sechs = new VerbindingsStuk(delta, echo, 3, "sechs");
+        VerbindingsStuk sechs = new VerbindingsStuk(delta, echo, 3, 100, "sechs");
         wegen.add(sechs);
-        VerbindingsStuk sieben = new VerbindingsStuk(echo, Nijmegen, 6, "sieben");
+        VerbindingsStuk sieben = new VerbindingsStuk(echo, Nijmegen, 6, 50, "sieben");
         wegen.add(sieben);
-        VerbindingsStuk acht = new VerbindingsStuk(Arnhem, foxtrot, 12, "acht");
+        VerbindingsStuk acht = new VerbindingsStuk(Arnhem, foxtrot, 12, 120, "acht");
         wegen.add(acht);
-        VerbindingsStuk neun = new VerbindingsStuk(foxtrot, Nijmegen, 10, "neun");
+        VerbindingsStuk neun = new VerbindingsStuk(foxtrot, Nijmegen, 10, 99, "neun");
         wegen.add(neun);
 
 
-        //TODO DONE omdraaien wegen
-        VerbindingsStuk nine = new VerbindingsStuk(Nijmegen, foxtrot, 10, "nine");
+        VerbindingsStuk nine = new VerbindingsStuk(Nijmegen, foxtrot, 10, 99, "nine");
         wegen.add(nine);
-        VerbindingsStuk eight = new VerbindingsStuk(foxtrot, Arnhem, 12, "eight");
+        VerbindingsStuk eight = new VerbindingsStuk(foxtrot, Arnhem, 12, 120, "eight");
         wegen.add(eight);
-        VerbindingsStuk seven = new VerbindingsStuk(Nijmegen, echo, 6, "seven");
+        VerbindingsStuk seven = new VerbindingsStuk(Nijmegen, echo, 6, 50, "seven");
         wegen.add(seven);
-        VerbindingsStuk six = new VerbindingsStuk(echo, delta, 3, "six");
+        VerbindingsStuk six = new VerbindingsStuk(echo, delta, 3, 100, "six");
         wegen.add(six);
-        VerbindingsStuk five = new VerbindingsStuk(delta, alfa, 4, "five");
+        VerbindingsStuk five = new VerbindingsStuk(delta, alfa, 4, 100, "five");
         wegen.add(five);
-        VerbindingsStuk four = new VerbindingsStuk(Nijmegen, charlie, 4, "four");
+        VerbindingsStuk four = new VerbindingsStuk(Nijmegen, charlie, 4, 50, "four");
         wegen.add(four);
-        VerbindingsStuk three = new VerbindingsStuk(charlie, bravo, 3, "three");
+        VerbindingsStuk three = new VerbindingsStuk(charlie, bravo, 3, 100, "three");
         wegen.add(three);
-        VerbindingsStuk two = new VerbindingsStuk(bravo, alfa, 5, "two");
+        VerbindingsStuk two = new VerbindingsStuk(bravo, alfa, 5, 100, "two");
         wegen.add(two);
-        VerbindingsStuk one = new VerbindingsStuk(alfa, Arnhem, 2, "one");
+        VerbindingsStuk one = new VerbindingsStuk(alfa, Arnhem, 2, 60, "one");
         wegen.add(one);
 
         Belemmering belemmering = new Wegwerkzaamheden();
@@ -114,11 +113,10 @@ public class Wegennet implements StatischeGegevens {
         belemmering = new File();
         belemmering.vertraging = 13;
         sechs.addVerkeersinfo(belemmering);
-        SnelheidsControle controle = new Flitspaal(five);
-        controle.maxSpeed = 80;
+        SnelheidsControle controle = new Flitspaal();
         five.addVerkeersinfo(controle);
-        controle = new Radarcontrole(one);
-        controle.maxSpeed = 120;
+        funf.addVerkeersinfo(controle);
+        controle = new Radarcontrole();
         one.addVerkeersinfo(controle);
 
     }

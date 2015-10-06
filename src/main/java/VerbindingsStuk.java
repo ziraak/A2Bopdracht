@@ -12,10 +12,11 @@ public class VerbindingsStuk {
     private ArrayList<Belemmering> belemmeringen;
     private ArrayList<SnelheidsControle> snelheidscontroles;
 
-    public VerbindingsStuk(Locatie startPunt, Locatie eindPunt, int reistijdInMinuten, String naam) {
+    public VerbindingsStuk(Locatie startPunt, Locatie eindPunt, int reistijdInMinuten, int maxspeed, String naam) {
         this.startPunt = startPunt;
         this.eindPunt = eindPunt;
         this.naam = naam;
+        this.maxspeed = maxspeed;
         this.reistijd = reistijdInMinuten;
         belemmeringen = new ArrayList<Belemmering>();
         snelheidscontroles = new ArrayList<SnelheidsControle>();
@@ -34,6 +35,7 @@ public class VerbindingsStuk {
     }
 
     public void addVerkeersinfo(VerkeersInfo informatie) {
+        informatie.addTo(this);
         if (informatie instanceof Belemmering) {
             belemmeringen.add((Belemmering) informatie);
         } else if (informatie instanceof SnelheidsControle) {
@@ -42,11 +44,14 @@ public class VerbindingsStuk {
 
     }
 
-    public int getSnelheidsLimiet() {
+    public int getMaxspeed() {
+        return this.maxspeed;
+    }
+
+    public void getSnelheidsControle() {
         for (SnelheidsControle s : snelheidscontroles) {
-            maxspeed = s.getMaxSnelheid();
+            s.getMaxSnelheid();
         }
-        return maxspeed;
     }
 
 
@@ -54,7 +59,6 @@ public class VerbindingsStuk {
         int werkelijkeReistijd = reistijd;
         for (Belemmering b : belemmeringen) {
             werkelijkeReistijd += b.getVertraging();
-//            System.out.println("vertraging = " + b.vertraging);
         }
         return werkelijkeReistijd;
     }
