@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -20,6 +21,14 @@ public class Wegennet implements StatischeGegevens {
         }
         return null;
     }
+
+    public ArrayList<String> getAanliggendeLocaties(VerbindingsStuk vs) {
+        ArrayList<String> locaties = new ArrayList<String>();
+        locaties.add(0, vs.startPunt.getNaam());
+        locaties.add(1, vs.eindPunt.getNaam());
+        return locaties;
+    }
+
 
     public Locatie getInstanceOfLocatie(String locatie) {
         for (Locatie x : plaatsen) {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 public class VerbindingsStuk {
 
-    private Locatie startPunt, eindPunt;
+    public Locatie startPunt, eindPunt;
     private String naam;
     private int reistijd;
     private int maxspeed;
