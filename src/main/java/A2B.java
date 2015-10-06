@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Harmen on 5-10-2015.
@@ -36,9 +37,5 @@ public class A2B {
 
 
     }
-     private ArrayList checkDuplicateVerkeersinfo(ArrayList verkeersinfo){
-         return null;
-     }
-
 
 }

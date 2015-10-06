@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by J on 5-10-2015.
@@ -29,14 +30,6 @@ public class Wegennet implements StatischeGegevens {
         }
         return null;
     }
-
-    public ArrayList<String> getAanliggendeLocaties(VerbindingsStuk vs) {
-        ArrayList<String> locaties = new ArrayList<String>();
-        locaties.add(0, vs.startPunt.getNaam());
-        locaties.add(1, vs.eindPunt.getNaam());
-        return locaties;
-    }
-
 
     public Locatie getInstanceOfLocatie(String locatie) {
         for (Locatie x : plaatsen) {
@@ -119,6 +112,13 @@ public class Wegennet implements StatischeGegevens {
         controle = new Radarcontrole();
         one.addVerkeersinfo(controle);
 
+
+        long vanaf = 1445127000000L;
+        long tot = 1445227000000L;
+        Ontoegankelijk geenToegang = new Ontoegankelijk(new Date(vanaf), new Date(tot));
+        neun.addVerkeersinfo(geenToegang);
+        geenToegang = new Ontoegankelijk(new Date(vanaf), new Date(tot));
+        nine.addVerkeersinfo(geenToegang);
     }
 
 

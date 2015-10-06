@@ -18,14 +18,4 @@ public abstract class Locatie {
     public String getNaam() {
         return this.naam;
     }
-
-    public ArrayList<VerbindingsStuk> getVerbindingsStukkenToLocation() {
-        return null;
-    }
-
-    public ArrayList<VerbindingsStuk> getVerbindingsStukkenFromLocation() {
-        return null;
-    }
-
-
 }

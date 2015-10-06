@@ -4,8 +4,9 @@ import java.util.ArrayList;
  * Created by J on 5-10-2015.
  */
 public class Route {
-    ArrayList<VerbindingsStuk> verbindingsStukArrayList;
-    String beginpunt, eindpunt;
+    public String beginpunt, eindpunt;
+    private ArrayList<VerbindingsStuk> verbindingsStukArrayList;
+    private ArrayList<Locatie> tussenLocaties;
     private int totaleReistijd;
     private int maxspeed;
 
@@ -13,18 +14,21 @@ public class Route {
         this.eindpunt = eindpunt;
         this.verbindingsStukArrayList = verbindingsStukArrayList;
         this.beginpunt = beginpunt;
+        tussenLocaties = new ArrayList<Locatie>();
+        for (VerbindingsStuk verbindingsStuk : verbindingsStukArrayList) {
+            if (verbindingsStuk.eindPunt.getNaam() != eindpunt) {
+                tussenLocaties.add(verbindingsStuk.eindPunt);
+            }
+        }
     }
 
-    public ArrayList<VerkeersInfo> getVerkeersInfo() {
-        return null;
-    }
 
     public void printInfo() {
         System.out.println("route info:-------------------------------------------");
         System.out.println("van " + beginpunt + " naar " + eindpunt);
         System.out.printf("via ");
-        for (VerbindingsStuk verbindingsStuk : verbindingsStukArrayList) {
-            System.out.printf("%s,", verbindingsStuk.getNaam());
+        for (Locatie tussenLocatie : tussenLocaties) {
+            System.out.printf("%s ", tussenLocatie.getNaam());
         }
         System.out.printf("%n");
         getTotaleReistijd();
@@ -36,7 +40,7 @@ public class Route {
         totaleReistijd = 0;
         for (VerbindingsStuk k : verbindingsStukArrayList) {
             totaleReistijd += k.getReistijd();
-            k.getSnelheidsControle();
+            k.printVerkeersInfo();
         }
     }
 }
